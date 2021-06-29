@@ -1,0 +1,241 @@
+.form {
+  background-color: $form-color;
+  width: 100%;
+  margin: auto;
+  max-width: 525px;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 18px;
+}
+
+.form h2 {
+  color: $text-color;
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.form__header {
+  background-color: $details-color;
+  color: #fff;
+  padding: 30px 20px 35px 20px;
+  display: flex;
+}
+
+.form__content {
+  padding: 20px 20px 20px 85px;
+  counter-reset: counter;
+}
+
+.form__list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+}
+.form__label {
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  color: $text-color;
+}
+
+.form__label--info {
+  opacity: 0;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.form__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-direction: column-reverse;
+  padding-top: 50px;
+}
+
+.form__input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid $text-color;
+  padding: 10px 0 7px;
+  overflow: auto;
+  color: $text-color;
+  font-size: 24px;
+  background-color: transparent;
+  color: $text-color;
+  font-weight: 100;
+  font-size: 18px;
+  color: $text-color;
+}
+
+.form__input:focus {
+  border-bottom: 1px solid $details-color;
+  color: $details-color;
+  width: 100%;
+  transition: width 0.3s ease-out;
+}
+
+.form__input:focus ~ .form__label--info {
+  opacity: 1;
+  animation-name: label-animation;
+  animation-duration: 0.2s;
+}
+
+.form__input:valid ~ .form__label--info {
+  opacity: 1;
+}
+
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+@keyframes label-animation {
+  0% {
+    font-size: 24px;
+  }
+  50% {
+    font-size: 20px;
+  }
+
+  100% {
+    font-size: 16px;
+  }
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form__input::placeholder {
+  color: $text-color;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.form__radio {
+  border: 1px solid $text-color;
+  width: 26px;
+  height: 26px;
+  margin: 0 10px 0 0;
+  position: relative;
+  border-radius: 13px;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.form__radio:checked {
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.form__radio:checked::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  background-color: #7ddbd5;
+  animation-name: radio-animation;
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  background-image: url("../img/tick.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
+@keyframes radio-animation {
+  0% {
+    -webkit-transform: scale(0.1, 0.1);
+    transform: scale(0.1, 0.1);
+  }
+  40% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+  }
+  80% {
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+  }
+}
+
+.form__radio:checked::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 17px;
+  border: 1px solid $details-color;
+  outline: none;
+  animation-name: border-animation;
+  animation-duration: 0.2s;
+  top: -2px;
+  left: -2px;
+  opacity: 0;
+}
+
+@keyframes border-animation {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.form__btn {
+  outline: none;
+  border: none;
+  background-color: $details-color;
+  color: #fff;
+  padding: 15px;
+  width: 48%;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 18px;
+  cursor: pointer;
+}
+
+.form__btn:hover {
+  background-color: #367fcf;
+}

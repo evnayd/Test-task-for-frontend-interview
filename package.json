@@ -1,0 +1,30 @@
+{
+  "name": "form",
+  "version": "1.0.0",
+  "description": "test-project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style compressed -o dist/css src/style.scss",
+    "serve": "browser-sync start --server --files 'dist/css/*.css, **/*.html'",
+    "watch:css": "onchange 'src/scss' -- npm run scss",
+    "start": "gulp start",
+    "build": "gulp build"
+  },
+  "author": "Evnayd",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.2.3",
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-webp": "^4.0.1"
+  }
+}
