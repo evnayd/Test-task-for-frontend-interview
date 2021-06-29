@@ -1,7 +1,7 @@
-#test-task
+test-task
 
-#npm i
+npm i
 
-#npm run start
+npm run start
 
 Technology: HTML, SCSS, Vanilla JS, gulp.
