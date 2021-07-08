@@ -5,9 +5,12 @@ var info = document.querySelector(".form-header__info");
 var formBtn = document.querySelector(".form__btn");
 var inputs = document.querySelectorAll(".form__input");
 var radioBtns = document.querySelectorAll(".form__radio");
-
 var percent = 0;
 info.innerHTML = percent + " %";
+var time = 400;
+var step = 1;
+var num = 0;
+var t = Math.round(time / (num / step));
 
 //check if event took place on input element and if input wasn't empty.
 //if so, increase the percent of % of form fullness;
@@ -37,20 +40,32 @@ form.addEventListener("click", function (event) {
 });
 
 function increaseThePercentage() {
-  percent = percent + 25;
   if (percent > 99) {
     info.innerHTML = 100 + " %";
   } else {
-    info.innerHTML = percent + " %";
+    var interval = setInterval(() => {
+      percent = percent + step;
+      if (percent === num) {
+        clearInterval(interval);
+      }
+      info.innerHTML = percent + " %";
+    }, t);
+    num = num + 25;
   }
 }
 
 function reduceThePercentage() {
-  percent = percent - 25;
   if (percent < 1) {
     info.innerHTML = 0 + " %";
   } else {
-    info.innerHTML = percent + " %";
+    var interval = setInterval(() => {
+      percent = percent - step;
+      if (percent === num) {
+        clearInterval(interval);
+      }
+      info.innerHTML = percent + " %";
+    }, t);
+    num = num - 25;
   }
 }
 
